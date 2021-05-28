@@ -7,7 +7,7 @@ var app = express();
 var server = require("http").createServer(app);
 var io = require("socket.io").listen(server);
 var handler = require("./handler");
-var port = 1337;
+var port = process.env.PORT || 1337;
 
 // Sets up express static server directory to the /public folder
 app.use(express.static(__dirname + "/public"));
